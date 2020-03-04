@@ -3,13 +3,19 @@ import React from "react";
 import "./App.css";
 import Login from "./components/Login";
 import Home from "./components/Home.jsx";
+import Product from "./components/Product.jsx";
+import Card from "./components/Card.jsx";
 import { Route } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <div>
       <Route exact path="/" render={() => <Login />} />
       <Route path="/home" render={() => <Home />} />
+      <Route
+        path="/details"
+        render={() => <Product product={props.location} />}
+      />
     </div>
   );
 }

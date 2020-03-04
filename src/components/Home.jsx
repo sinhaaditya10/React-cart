@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./component.css";
-import CartLogo from "./cart.svg";
 import Card from "./Card";
+import NavBar from "./NavBar";
 
 class Home extends Component {
   state = {
@@ -13,12 +13,32 @@ class Home extends Component {
         price: "$ 500.0"
       },
       {
-        id: "123",
+        id: "124",
         name: "Fasttrack",
         price: "$ 500.0"
       },
       {
-        id: "123",
+        id: "125",
+        name: "Fasttrack",
+        price: "$ 500.0"
+      },
+      {
+        id: "126",
+        name: "Fasttrack",
+        price: "$ 500.0"
+      },
+      {
+        id: "127",
+        name: "Fasttrack",
+        price: "$ 500.0"
+      },
+      {
+        id: "128",
+        name: "Fasttrack",
+        price: "$ 500.0"
+      },
+      {
+        id: "129",
         name: "Fasttrack",
         price: "$ 500.0"
       }
@@ -27,18 +47,14 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-          <span className="home-logo">
-            React
-            <img
-              src={CartLogo}
-              alt=""
-              style={{ width: "40px", height: "40px" }}
-            />
-          </span>
-          <span className="home-welcome">Welcome Home</span>
-        </nav>
-        <div className="container"></div>
+        <NavBar />
+        <div className="row-container">
+          {this.state.products.map(product => (
+            <div className="column-container" key={product.id}>
+              <Card product={product} key={product.id} ref={this.cardref} />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

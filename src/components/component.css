@@ -1,7 +1,17 @@
 .card {
   padding: 20px;
   margin: 20px;
-  width: max-content;
+  width: 300px;
+  float: center;
+}
+.grow {
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  float: center;
+  border-style: inset;
+  border-color: rgb(255, 216, 42);
+  border-width: thin;
 }
 img {
   width: 100px;
@@ -30,8 +40,21 @@ img {
   margin-right: auto;
   margin-left: auto;
 }
-.col {
-  margin-left: inherit;
+p {
+  text-align: center;
 }
-.row {
+.row-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.column-container {
+  flex: 3;
+  flex-basis: 33.3%;
+  justify-content: center;
+  text-align: center;
+  display: inline-block;
+}
+.product-photo {
+  width: 430px;
 }

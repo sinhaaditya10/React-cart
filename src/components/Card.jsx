@@ -1,18 +1,26 @@
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import CartLogo from "./cart.svg";
-class Card extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="card">
-        <img src={CartLogo} alt="..." style={{ width: "50px" }} />
-        <p>Product Name</p>
-        <p>Product Description</p>
-        <p>Price</p>
-        <button className="btn btn-primary btn-sm m-2">Add To Cart</button>
+import { Link } from "react-router-dom";
+import "tachyons";
+function Card(props) {
+  return (
+    <Link
+      to={{
+        pathname: "/details"
+      }}
+    >
+      <div className="grow">
+        <img src={CartLogo} alt="..." style={{ width: "80px" }} />
+        <p>
+          <strong>{props.product.name}</strong>
+        </p>
+        <p style={{ color: "green" }}>
+          <strong>{props.product.price}</strong>
+        </p>
       </div>
-    );
-  }
+    </Link>
+  );
 }
 
 export default Card;
