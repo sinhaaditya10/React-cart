@@ -57,7 +57,7 @@ class Login extends Component {
                 }
               />
               <br />
-              <Link to="/home" className="login-home">
+              <Link to={`/home/${this.state.username.split("@")[0]}`}>
                 <button
                   className="btn btn-primary btn-sm"
                   style={{

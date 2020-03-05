@@ -16,7 +16,7 @@ export class NavBar extends Component {
               style={{ width: "40px", height: "40px" }}
             />
           </span>
-          <span className="home-welcome">Welcome Home</span>
+          <span className="home-welcome">Welcome {this.props.user}</span>
         </nav>
       </div>
     );

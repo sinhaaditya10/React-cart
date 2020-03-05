@@ -7,7 +7,7 @@ export class Product extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar user={this.props.match.params.user} />
         <div className="row-container" style={{ marginTop: "80px" }}>
           <div className="column-container">
             <img
@@ -23,7 +23,7 @@ export class Product extends Component {
           </div>
           <div className="column-container">
             <p className="display-4" style={{ textAlign: "left" }}>
-              Product Name
+              {this.props.match.params.name}
             </p>
             <p
               className="badge badge-secondary text-wrap"
@@ -33,7 +33,7 @@ export class Product extends Component {
                 float: "left"
               }}
             >
-              Product ID
+              Product id: #{this.props.match.params.id}
             </p>
             <p
               className="display-5"
@@ -45,7 +45,7 @@ export class Product extends Component {
                 marginTop: "13%"
               }}
             >
-              $ 1000.0
+              {this.props.match.params.price}
             </p>
 
             <button
