@@ -12,12 +12,7 @@ function App(props) {
     <div>
       <Route exact path="/" render={() => <Login />} />
       <Route path="/home/:username" component={Home} name="home" />
-      <Route
-        path="/details/:user/:id/:name/:price"
-        component={Product}
-        name="product"
-      />
-      }
+      <Route path="/details/:user/:id" component={Product} name="product" />}
     </div>
   );
 }

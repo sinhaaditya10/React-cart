@@ -1,9 +1,28 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./component.css";
-import CartLogo from "./cart.svg";
 import NavBar from "./NavBar";
+import data from "./data/data.json";
+
 export class Product extends Component {
+  state = {
+    id: "",
+    name: "",
+    price: ""
+  };
+  componentDidMount() {
+    data.map(product => {
+      if (product.id === this.props.match.params.id) {
+        this.setState({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          url: product.url
+        });
+        console.log(product.url);
+      }
+    });
+  }
   render() {
     return (
       <div>
@@ -11,19 +30,19 @@ export class Product extends Component {
         <div className="row-container" style={{ marginTop: "80px" }}>
           <div className="column-container">
             <img
-              src={CartLogo}
+              src={this.state.url}
               alt="..."
               style={{
                 float: "center",
-                width: "250px",
-                height: "250px",
+                width: "300px",
+                height: "300px",
                 padding: "none"
               }}
             />
           </div>
           <div className="column-container">
             <p className="display-4" style={{ textAlign: "left" }}>
-              {this.props.match.params.name}
+              {this.state.name}
             </p>
             <p
               className="badge badge-secondary text-wrap"
@@ -33,7 +52,7 @@ export class Product extends Component {
                 float: "left"
               }}
             >
-              Product id: #{this.props.match.params.id}
+              Product id: #{this.state.id}
             </p>
             <p
               className="display-5"
@@ -45,7 +64,7 @@ export class Product extends Component {
                 marginTop: "13%"
               }}
             >
-              {this.props.match.params.price}
+              {this.state.price}
             </p>
 
             <button

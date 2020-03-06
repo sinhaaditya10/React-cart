@@ -9,15 +9,15 @@
   margin: 20px;
   width: 300px;
   float: center;
-  border-style: inset;
+  border-style: none;
   border-color: rgb(255, 216, 42);
-  border-width: thin;
 }
 img {
   width: 100px;
   height: 100px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 .login-header {
   margin-left: auto;
@@ -57,4 +57,7 @@ p {
 }
 .product-photo {
   width: 430px;
+}
+.display-4 {
+  margin-right: 10px;
 }
