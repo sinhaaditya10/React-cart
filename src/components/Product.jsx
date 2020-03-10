@@ -8,7 +8,9 @@ export class Product extends Component {
   state = {
     id: "",
     name: "",
-    price: ""
+    price: "",
+    buttonText: "Add to Cart",
+    buttoncolor: "primary"
   };
   componentDidMount() {
     data.map(product => {
@@ -23,6 +25,10 @@ export class Product extends Component {
       }
     });
   }
+  productAdded = () => {
+    console.log("Product Added");
+    this.setState({ buttonText: "Item Added", buttoncolor: "grey" });
+  };
   render() {
     return (
       <div>
@@ -69,9 +75,13 @@ export class Product extends Component {
 
             <button
               className="btn btn-primary btn-sm"
-              style={{ float: "left" }}
+              style={{
+                float: "left",
+                backgroundColor: `${this.state.buttoncolor}`
+              }}
+              onClick={this.productAdded}
             >
-              Add to Cart
+              {this.state.buttonText}
             </button>
           </div>
         </div>

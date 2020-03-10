@@ -25,12 +25,6 @@ img {
   text-align: center;
   margin-top: 5%;
 }
-.home-welcome {
-  color: white;
-  float: right;
-  margin-left: 100px;
-  text-align: right;
-}
 .home-logo {
   color: aliceblue;
   max-height: fit-content;
@@ -69,4 +63,11 @@ p {
   margin-right: auto;
   color: red;
   font-size: small;
+}
+.cart-button {
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav-welcome {
+  text-decoration-color: black;
 }
