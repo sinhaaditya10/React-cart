@@ -4,9 +4,24 @@ import "./component.css";
 import Card from "./Card";
 import NavBar from "./NavBar";
 import data from "./data/data.json";
+import { Redirect } from "react-router-dom";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    const token = localStorage.getItem("token");
+    let loggedIn = true;
+    if (token === null) {
+      loggedIn = false;
+    }
+    this.state = {
+      loggedIn
+    };
+  }
   render() {
+    if (!this.state.loggedIn) {
+      return <Redirect to="/" />;
+    }
     return (
       <div>
         <NavBar user={this.props.match.params.username} />
